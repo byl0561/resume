@@ -22,6 +22,14 @@
             {% endblock %}
             {{ assets.css() }}
 
+            {% block javascripts %}
+                {% do assets.add('jquery',101) %}
+                {% do assets.addJs('theme://js/foundation.min.js') %}
+                {% do assets.addJs('theme://js/vendor/snap.svg.js') %}
+                {% do assets.addJs('theme://js/pizza.js') %}
+            {% endblock %}
+            {{ assets.js() }}
+
             <link href="{{ url('theme://css/print.css') }}" rel="stylesheet" type="text/css" media="print" />
 
         {% endblock %}
@@ -32,23 +40,15 @@
             {% block header %}
                 {% include 'partials/header.html.twig' %}
             {% endblock %}
-            <div class="row main">
+			<div class="row main curved_box">
                 {% block content %}
-                {% endblock %}
+				{% endblock %}
             </div>
         {% endblock %}
 
         {% block footer %}
             {% include 'partials/footer.html.twig' %}
         {% endblock %}
-
-        {% block javascripts %}
-            {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://js/foundation.min.js') %}
-            {% do assets.addJs('theme://js/vendor/snap.svg.js') %}
-            {% do assets.addJs('theme://js/pizza.js') %}
-        {% endblock %}
-        {{ assets.js() }}
 
         <script type="text/javascript">
         Pizza.init(document.body, {

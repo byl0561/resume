@@ -1,42 +1,41 @@
 ---
-title: 技能评价
+title: 专业技能
 icon: star
 date: 16:42 08/29/2017
 
-column1_name: 编程技能
+column1_name: 类别
 column1_animation: fadeIn
 
 column1:
-  - name: 星际飞行
-    level: 8
-  - name: 星际生态学
-    level: 8
-  - name: 星际通信
-    level: 7
-  - name: 曲率原理
+  - name: 编程语言
     level: 5
-  - name: 天体物理学
-    level: 7
-  - name: 生物材料学
-    level: 8
-  - name: 星舰结构学
+  - name: 数据库
+    level: 5
+  - name: 消息队列
     level: 4
-  - name: 汉语
-    level: 8
-  - name: 时空原理
-    level: 7
+  - name: 搜索引擎
+    level: 3
+  - name: 数据生产
+    level: 3
+  - name: 大数据分析
+    level: 3
+  - name: 计算机基础
+    level: 5
+  - name: 图算法
+    level: 3
 
-column2_name: 能力简述
+column2_name: 详情
 column2_animation: fadeIn
 
 column2:
-  - name: 良好的操作规范。
-  - name: 熟悉舰船工作机制。
-  - name: 善于维护星际生态平衡。
-  - name: 喜欢星际文化交流。
-  - name: 熟练使用曲率跃迁飞行。
-  - name: 热衷星际通信与星舰调度。
-  - name: 关注泛星际生态环境。
+  - name: 熟悉Java，了解Go、Python
+  - name: 熟悉MySQL、Redis，Dynamo
+  - name: 熟悉RocketMQ、Kafka
+  - name: 了解ElasticSearch
+  - name: 熟悉Hive，了解Spark
+  - name: 了解ClickHouse
+  - name: 熟悉计算机网络、操作系统
+  - name: 了解随机游走、知识图谱等
     
 taxonomy:
     category: left

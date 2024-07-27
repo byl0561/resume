@@ -1,23 +1,20 @@
 ---
-title: 我的简历 | 左蓝
-name: 左蓝
-description: 星际生态学 & 星际通信
+title: 个人简历 | 鲍裕麟
+name: 鲍裕麟
+description: 后端&算法
 
-download_name: "<i class=\"fi-arrow-down\"></i> 下载"
-download_url: ""
-
-baseinfo_name: "基本信息"
+baseinfo_name: 基本信息
 baseinfo:
-    - line: "出生于1995年2月"
-    - line: "性别：男"
-contact_name: "联系方式"
+    - line: 出生日期：1996.03
+    - line: 性别：男
+contact_name: 联系方式
 contact: 
-    - line: "邮箱：i@zuolan.me"
-    - line: "手机：1234567890"
-social_name: "社交信息"
+    - line: 微信：byl0561
+    - line: 邮箱：<a href="mailto:blog.lavaplanets.com">byl0561@gmail.com</a>
+social_name: 社交信息
 social:
-    - line: "微信：@zuo-lan"
-    - line: "QQ：792236072"
+	- line: GitHub：<a href="https://github.com/byl0561">byl0561</a>
+	- line: 博客：<a href="https://blog.lavaplanets.com">blog.lavaplanets.com</a>
 
 sitemap:
     changefreq: weekly
@@ -32,7 +29,7 @@ content:
     pagination: true
 
 feed:
-    description: 左蓝的个人简历。
+    description: 鲍裕麟的个人简历。
     limit: 10
 ---
 

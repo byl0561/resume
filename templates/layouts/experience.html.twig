@@ -3,11 +3,11 @@
   <div class="row experience">
     {% for item in module.header.experience %}
     <div class="large-6 medium-6 small-12 columns {% if loop.last %}end{% endif %} {% if item.animation %}animated {{ item.animation }}{% endif %}">
-      <div class="year">{{ item.years }}</div>
+      <div class="year">{{ 'now'|date('Y') - item.start_year + 1 }}</div>
       <div class="exp_data">
-        <div class="date">{{ item.date }}</div>
-        <div class="role">{{ item.role }}</div>
-        <div class="company">{{ item.company }}</div>
+        <div class="type">年{{ item.type }}</div>
+        <div class="role">{{ item.highlight1 }}</div>
+        <div class="company">{{ item.highlight2 }}</div>
       </div>
     </div>
     {% endfor %}

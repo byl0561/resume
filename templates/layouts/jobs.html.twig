@@ -1,0 +1,28 @@
+<div class="avoid_pagebreak animated fadeInUp">
+  <h4 class="title"><i class="fi-{{ module.header.icon }}"></i> {{ module.header.title }}</h4>
+  <div class="row recognitions">
+    {% for item in module.header.jobs %}
+    <div class="large-12 small-12 columns {% if loop.last %}end{% endif %} {% if item.animation %}animated {{ item.animation }}{% endif %}">
+      <div class="row">
+        <div class="columns" style="width:150px">
+          <img src="{{ url('theme://img') ~ '/' ~ item.logo }}" alt="{{ item.company }}" class="ribbon gray">
+        </div>
+        <div class="large-8 medium-8 columns">
+          <div class="recog_data">
+            <div class="title">{{ item.company }}</div>
+            <div class="place">{{ item.position }}</div>
+            <div class="desc">
+				<ul>
+				  {% for item in item.desc %}
+					<li>{{ item.line }}</li>
+				  {% endfor %}
+				</ul>
+			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {{ module.content }}
+</div>
