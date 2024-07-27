@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.15
 
 ENV GRAV_VERSION="1.3.4" PASSWORD=""
 
