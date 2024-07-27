@@ -2,6 +2,7 @@ FROM alpine:3.12
 
 ENV GRAV_VERSION="1.3.4" PASSWORD=""
 
+RUN sed -i 's/http:/https:/g' /etc/apk/repositories
 RUN apk update && \
     # Install build dependencies
     apk add --no-cache -u --virtual build curl zip && \
