@@ -14,16 +14,16 @@ RUN apk update && \
     php7-zlib \
     php7-xml \
     php7-xmlreader \
-    php7.3-pdo \
-    php7.3-phar \
-    php7.3-openssl \
+    php7-pdo \
+    php7-phar \
+    php7-openssl \
     php7.3-gd \
     php7.3-iconv \
-    php7.3-mcrypt \
+    php7-mcrypt \
     php7.3-ctype \
     php7-zip \
     php7.3-curl \
-    php7.3-opcache \
+    php7-opcache \
     php7.3-apcu \
     php7.3-intl \
     php7.3-bcmath \
