@@ -7,27 +7,27 @@ RUN apk update && \
     apk add --no-cache -u --virtual build curl zip && \
     # Install PHP Env
     apk add --no-cache nginx ca-certificates \
-    php7-fpm \
-    php7-mbstring \
-    php7-json \
-    php7-session \
-    php7-zlib \
-    php7-xml \
-    php7-xmlreader \
-    php7-pdo \
-    php7-phar \
-    php7-openssl \
-    php7-gd \
-    php7-iconv \
-    php7-mcrypt \
-    php7-ctype \
-    php7-zip \
-    php7-curl \
-    php7-opcache \
-    php7-apcu \
-    php7-intl \
-    php7-bcmath \
-    php7-dom && \
+    php7.3-fpm \
+    php7.3-mbstring \
+    php7.3-json \
+    php7.3-session \
+    php7.3-zlib \
+    php7.3-xml \
+    php7.3-xmlreader \
+    php7.3-pdo \
+    php7.3-phar \
+    php7.3-openssl \
+    php7.3-gd \
+    php7.3-iconv \
+    php7.3-mcrypt \
+    php7.3-ctype \
+    php7.3-zip \
+    php7.3-curl \
+    php7.3-opcache \
+    php7.3-apcu \
+    php7.3-intl \
+    php7.3-bcmath \
+    php7.3-dom && \
     # Download Grav
     mkdir -p /usr/html && \
     curl -fLk -o /tmp/grav.zip "https://github.com/getgrav/grav/releases/download/$GRAV_VERSION/grav-v$GRAV_VERSION.zip" && \
