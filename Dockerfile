@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.15
 
 ENV GRAV_VERSION="1.3.4" PASSWORD=""
 
@@ -10,10 +10,10 @@ RUN apk update && \
     php7.3-fpm \
     php7.3-mbstring \
     php7.3-json \
-    php7.3-session \
-    php7.3-zlib \
-    php7.3-xml \
-    php7.3-xmlreader \
+    php7-session \
+    php7-zlib \
+    php7-xml \
+    php7-xmlreader \
     php7.3-pdo \
     php7.3-phar \
     php7.3-openssl \
@@ -21,7 +21,7 @@ RUN apk update && \
     php7.3-iconv \
     php7.3-mcrypt \
     php7.3-ctype \
-    php7.3-zip \
+    php7-zip \
     php7.3-curl \
     php7.3-opcache \
     php7.3-apcu \
