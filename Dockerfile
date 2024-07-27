@@ -8,8 +8,8 @@ RUN apk update && \
     # Install PHP Env
     apk add --no-cache nginx ca-certificates \
     php7.3-fpm \
-    php7.3-mbstring \
-    php7.3-json \
+    php7-mbstring \
+    php7-json \
     php7-session \
     php7-zlib \
     php7-xml \
@@ -17,15 +17,15 @@ RUN apk update && \
     php7-pdo \
     php7-phar \
     php7-openssl \
-    php7.3-gd \
-    php7.3-iconv \
+    php7-gd \
+    php7-iconv \
     php7-mcrypt \
     php7.3-ctype \
     php7-zip \
     php7.3-curl \
     php7-opcache \
     php7.3-apcu \
-    php7.3-intl \
+    php7-intl \
     php7.3-bcmath \
     php7.3-dom && \
     # Download Grav
