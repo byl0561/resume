@@ -1,0 +1,26 @@
+typeList:
+  - name: 编程语言
+    level: 5
+  - name: 数据库
+    level: 5
+  - name: 消息队列
+    level: 4
+  - name: 搜索引擎
+    level: 3
+  - name: 数据生产
+    level: 3
+  - name: 大数据分析
+    level: 3
+  - name: 计算机基础
+    level: 5
+  - name: 图算法
+    level: 3
+detailList:
+  - 熟悉Java，了解Go、Python
+  - 熟悉MySQL、Redis，Dynamo
+  - 熟悉RocketMQ、Kafka
+  - 了解ElasticSearch
+  - 熟悉Hive，了解Spark
+  - 了解ClickHouse
+  - 熟悉计算机网络、操作系统
+  - 了解随机游走、知识图谱等

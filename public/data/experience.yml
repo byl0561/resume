@@ -1,0 +1,10 @@
+- type: 后端开发
+  startYear: 2021
+  highlights:
+    - 千亿级数据量
+    - 百万级并发
+- type: 大数据与图算法
+  startYear: 2023
+  highlights:
+    - 万亿级异构图
+    - ItemRank、知识图谱
