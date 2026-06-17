@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { html as research } from "/public/data/research.md"
+import Icon from "@/components/Icon.vue"
 </script>
 
 <template>
   <h4 class="title">
-    <i class="fi-like" />
+    <Icon name="like" />
     科研成果
   </h4>
   <div class="research content" v-html="research" />

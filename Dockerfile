@@ -1,16 +1,13 @@
 # 构建应用
-FROM node:20 AS builder
+FROM node:24-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY . .
 RUN npm run build
 
-# 最小化镜像
-FROM node:20-alpine
-WORKDIR /app
-COPY --from=builder /app/dist ./dist
-RUN npm install -g http-server
-
+# 用 nginx 提供静态文件（比 node + http-server 更轻量）
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
-CMD ["http-server", "dist", "-p", "80"]
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,31 +1,26 @@
 <script setup lang="ts">
 import skill from "/public/data/skill.yml"
+import Icon from "@/components/Icon.vue"
 </script>
 
 <template>
   <h4 class="title">
-    <i class="fi-star" />
+    <Icon name="star" />
     专业技能
   </h4>
-  <div class="row">
-    <div class="medium-2 columns">
+  <div class="skill">
+    <div class="skill-types">
       <h6 class="title">类别</h6>
-      <ul class="small-block-grid-2 content" v-for="item in skill.typeList" :key="item.name">
-        <li>{{item.name}}</li>
-        <li>
-          <ul class="small-block-grid-8 ellipses">
-            <li v-for="i in 6" :key="i">
-              <span :class="{grey: i > item.level}" />
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="medium-2 columns">
-      <h6 class="title">详情</h6>
-      <div>
-        <p class="content detail" v-for="(item, index) in skill.detailList" :key="index">{{item}}</p>
+      <div class="type-row" v-for="item in skill.typeList" :key="item.name">
+        <span class="type-name content">{{ item.name }}</span>
+        <span class="dots">
+          <span v-for="i in 6" :key="i" class="dot" :class="{ grey: i > item.level }" />
+        </span>
       </div>
+    </div>
+    <div class="skill-details">
+      <h6 class="title">详情</h6>
+      <p class="content detail" v-for="(item, index) in skill.detailList" :key="index">{{ item }}</p>
     </div>
   </div>
 </template>
@@ -35,62 +30,40 @@ h6 {
   font-style: normal;
 }
 
-[class*="block-grid-"] {
-  display: block;
-  padding: 0;
-  margin: 0 -0.625rem;
+.skill {
+  display: grid;
+  gap: 1rem 1.5rem;
 }
-[class*="block-grid-"]:before,
-[class*="block-grid-"]:after {
-  content: " ";
-  display: table;
-}
-[class*="block-grid-"]:after {
-  clear: both;
-}
-[class*="block-grid-"] > li {
-  display: block;
-  float: left;
-  height: auto;
-  padding: 0 0.625rem 1.25rem;
-}
-.small-block-grid-2 > li:nth-of-type(1n),
-.small-block-grid-8 > li:nth-of-type(1n) {
-  clear: none;
-}
-.small-block-grid-2 > li:nth-of-type(2n+1),
-.small-block-grid-8 > li:nth-of-type(8n+1) {
-  clear: both;
+@media (min-width: 40em) {
+  .skill {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.small-block-grid-2 li {
-  padding-bottom: 0;
+.type-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-.small-block-grid-2 > li {
-  list-style: none;
-  width: 50%;
+
+.dots {
+  display: flex;
+  gap: 0.3rem;
 }
-.small-block-grid-8 > li {
-  list-style: none;
-  width: 12.5%;
+
+.dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #58585A;
+}
+.dot.grey {
+  background: #D1D2D4;
 }
 
 .detail {
-  margin-bottom:0 !important;
-}
-
-.ellipses li span.grey {
-  background: #D1D2D4 !important;
-}
-
-.ellipses li span {
-  margin-left: -1.5rem;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.3rem;
-  background: #58585A !important;
-  border-radius: 100%;
-  display: block;
-  margin-top: 0.2rem;
+  margin-bottom: 0 !important;
 }
 </style>

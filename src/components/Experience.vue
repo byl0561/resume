@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import experience from "/public/data/experience.yml"
+import Icon from "@/components/Icon.vue"
 const currentYear = new Date().getFullYear()
 </script>
 
 <template>
   <h4 class="title">
-    <i class="fi-lightbulb" />
+    <Icon name="lightbulb" />
     个人经验
   </h4>
-  <div class="row experience">
-    <div v-for="(item, index) in experience" :key="item.type"
-         :class="['large-2', 'medium-2', 'columns', { end: index === experience.length - 1 }]">
-      <div class="year">{{currentYear - item.startYear + 1}}</div>
+  <div class="experience">
+    <div class="item" v-for="item in experience" :key="item.type">
+      <div class="year">{{ currentYear - item.startYear + 1 }}</div>
       <div class="exp_data">
-        <div class="content">年{{item.type}}</div>
-        <div class="desc" v-for="(highlight, index) in item.highlights" :key="index">{{highlight}}</div>
+        <div class="content">年{{ item.type }}</div>
+        <div class="desc" v-for="(highlight, index) in item.highlights" :key="index">{{ highlight }}</div>
       </div>
     </div>
   </div>
@@ -22,19 +22,30 @@ const currentYear = new Date().getFullYear()
 
 <style scoped>
 .experience {
-  position: relative;
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 64em) {
+  .experience {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
 .year {
   font-size: 10rem;
   font-weight: 400;
+  line-height: 1;
   color: #58585A;
-  float: left;
-  padding-right: 1rem;
 }
 
 .exp_data {
-  margin-top: 7.2rem;
+  padding-bottom: 0.5rem;
   white-space: nowrap;
 }
 </style>

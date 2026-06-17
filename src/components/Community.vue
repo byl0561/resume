@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { html as community } from "/public/data/community.md"
+import Icon from "@/components/Icon.vue"
 </script>
 
 <template>
   <h4 class="title">
-    <i class="fi-social-github" />
+    <Icon name="social-github" />
     个人项目
   </h4>
   <div class="community content" v-html="community" />

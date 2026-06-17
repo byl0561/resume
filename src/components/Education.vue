@@ -1,26 +1,25 @@
 <script setup lang="ts">
 import education from "/public/data/education.yml"
+import Icon from "@/components/Icon.vue"
 </script>
 
 <template>
   <h4 class="title">
-    <i class="fi-book" />
+    <Icon name="book" />
     教育经历
   </h4>
-  <div class="surround">
-    <div class="main">
-      <div class="item row" v-for="item in education" :key="item.school">
-        <div class="columns logo">
-          <img :src="`/images/${item.logo}`" :alt="item.school" class="ribbon gray" />
-        </div>
-        <div class="large-3-2 medium-3-2 columns text">
-          <div class="content">{{item.school}}</div>
-          <div class="content">{{item.major}}</div>
-          <div class="desc">
-            <ul>
-              <li v-for="(award, index) in item.awards" :key="index">{{award}}</li>
-            </ul>
-          </div>
+  <div class="timeline">
+    <div class="item" v-for="item in education" :key="item.school">
+      <div class="logo">
+        <img :src="`/images/${item.logo}`" :alt="item.school" class="ribbon gray" />
+      </div>
+      <div class="text">
+        <div class="content">{{ item.school }}</div>
+        <div class="content">{{ item.major }}</div>
+        <div class="desc">
+          <ul>
+            <li v-for="(award, index) in item.awards" :key="index">{{ award }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -28,35 +27,33 @@ import education from "/public/data/education.yml"
 </template>
 
 <style scoped>
-.surround {
-  position: relative;
-  margin-top: 2em;
-}
-
-.main {
-  border-left: 3px solid;
+.timeline {
+  margin-top: 2rem;
   padding-left: 2rem;
+  border-left: 3px solid;
 }
 
 .item {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  align-items: flex-start;
 }
 
-.item:before {
-  display: block;
+.item::before {
+  content: "";
+  position: absolute;
+  left: -2.4rem;
+  top: 2.75rem;
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
   border: 3px solid #fff;
   background: #222;
-  content: "";
-  position: absolute;
-  left: -0.4rem;
-  margin-top: 3.5rem;
 }
 
 .text {
-  padding-top: 1rem !important;
+  padding-top: 1rem;
 }
 </style>
