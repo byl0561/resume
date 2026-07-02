@@ -1,5 +1,14 @@
 <script setup lang="ts">
-import basic from "/public/data/basic.yml"
+import { useYaml } from "@/data"
+
+interface InfoGroup {
+  title: string
+  detailList: string[]
+}
+const basic = useYaml<{ name: string; jobTitle: string; infoList: InfoGroup[] }>(
+  "/data/basic.yml",
+  { name: "", jobTitle: "", infoList: [] },
+)
 </script>
 
 <template>

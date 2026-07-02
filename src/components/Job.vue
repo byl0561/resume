@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import job from "/public/data/job.yml"
+import { useYaml } from "@/data"
 import Icon from "@/components/Icon.vue"
+
+interface JobItem {
+  company: string
+  title: string
+  descriptions: string[]
+  logo: string
+}
+const job = useYaml<JobItem[]>("/data/job.yml", [])
 </script>
 
 <template>

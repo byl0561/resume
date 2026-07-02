@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { html as community } from "/public/data/community.md"
+import { useMarkdown } from "@/data"
 import Icon from "@/components/Icon.vue"
+
+const community = useMarkdown("/data/community.md")
 </script>
 
 <template>

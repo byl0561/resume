@@ -1,6 +1,14 @@
 <script setup lang="ts">
-import education from "/public/data/education.yml"
+import { useYaml } from "@/data"
 import Icon from "@/components/Icon.vue"
+
+interface EduItem {
+  school: string
+  major: string
+  awards: string[]
+  logo: string
+}
+const education = useYaml<EduItem[]>("/data/education.yml", [])
 </script>
 
 <template>

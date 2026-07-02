@@ -1,6 +1,12 @@
 <script setup lang="ts">
-import skill from "/public/data/skill.yml"
+import { useYaml } from "@/data"
 import Icon from "@/components/Icon.vue"
+
+interface SkillData {
+  typeList: { name: string; level: number }[]
+  detailList: string[]
+}
+const skill = useYaml<SkillData>("/data/skill.yml", { typeList: [], detailList: [] })
 </script>
 
 <template>

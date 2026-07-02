@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { html as information } from "/public/data/information.md"
+import { useMarkdown } from "@/data"
 import Icon from "@/components/Icon.vue"
+
+const information = useMarkdown("/data/information.md")
 </script>
 
 <template>

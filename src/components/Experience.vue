@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import experience from "/public/data/experience.yml"
+import { useYaml } from "@/data"
 import Icon from "@/components/Icon.vue"
+
+interface Exp {
+  type: string
+  startYear: number
+  highlights: string[]
+}
+const experience = useYaml<Exp[]>("/data/experience.yml", [])
 const currentYear = new Date().getFullYear()
 </script>
 
